@@ -1,13 +1,17 @@
 import React from "react"
-import './style.css';
+import './style.css'
 
-function CheckBox(props) {
+function TodoItem(props) {
     return (
         <div className="todo-item">
-        <input type="checkbox" name={props.key} value={props.key}></input>
-        <label>{props.component.text}</label>
+            <input 
+                type="checkbox" 
+                checked={props.item.completed} 
+                onChange={() => props.handleChange(props.item.id)}
+            />
+            <p>{props.item.text}</p>
         </div>
     )
-  }
-  
-export default CheckBox
+}
+
+export default TodoItem
